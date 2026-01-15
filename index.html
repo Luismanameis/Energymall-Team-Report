@@ -8,7 +8,6 @@
     <style>
         body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; margin: 0; }
         
-        /* STAGNANT HEADER SECTION */
         .sticky-summary { 
             position: sticky; 
             top: 0; 
@@ -51,18 +50,18 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="glass-card border-red-900/40">
             <p class="stat-label">Revenue Achievement</p>
-            <p class="stack-lg alert-red">2.37%</p>
-            <p class="text-[10px] font-bold opacity-30 uppercase">Goal: 300m | Actual: ₦7.1m</p>
+            <p class="stack-lg alert-red">6.60%</p>
+            <p class="text-[10px] font-bold opacity-30 uppercase">Goal: 300m | Actual: ₦19.8m</p>
         </div>
         <div class="glass-card border-red-900/40">
             <p class="stat-label">Customer Acquisition</p>
-            <p class="stack-lg alert-red">1.60%</p>
-            <p class="text-[10px] font-bold opacity-30 uppercase">Goal: 250 | Actual: 4</p>
+            <p class="stack-lg alert-red">3.20%</p>
+            <p class="text-[10px] font-bold opacity-30 uppercase">Goal: 250 | Actual: 8</p>
         </div>
         <div class="glass-card border-zinc-800">
-            <p class="stat-label">Conv. Rate Achievement</p>
-            <p class="stack-lg alert-red">35.09%</p>
-            <p class="text-[10px] font-bold opacity-30 uppercase">Target: 20% | Actual: 7.02%</p>
+            <p class="stat-label">Conversion Performance</p>
+            <p class="stack-lg alert-red">31.50%</p>
+            <p class="text-[10px] font-bold opacity-30 uppercase">Target: 20% | Actual: 6.30%</p>
         </div>
     </div>
 </div>
@@ -74,9 +73,9 @@
         <table>
             <thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th>% Achieved</th></tr></thead>
             <tbody>
-                <tr><td>Marketing Leads</td><td>1,500</td><td>57</td><td class="alert-red">3.80%</td></tr>
-                <tr><td>Total Reach</td><td>5.0m</td><td>0</td><td class="alert-red">0.00%</td></tr>
-                <tr><td>Total Engagement</td><td>170k</td><td>0</td><td class="alert-red">0.00%</td></tr>
+                <tr><td>Marketing Leads</td><td>1,500</td><td>127</td><td class="alert-red">8.47%</td></tr>
+                <tr><td>Total Reach</td><td>5m</td><td>0</td><td class="alert-red">0.00%</td></tr>
+                <tr><td>Total Engagement</td><td>170k</td><td>75</td><td class="alert-red">0.04%</td></tr>
             </tbody>
         </table>
     </div>
@@ -87,8 +86,8 @@
             <table>
                 <thead><tr><th>Product Inventory</th><th class="text-right">% Achievement</th></tr></thead>
                 <tbody>
-                    <tr><td>New Products (650 Target)</td><td class="text-right alert-red">2.77%</td></tr>
-                    <tr><td>Products Updated (450 Target)</td><td class="text-right alert-red">10.22%</td></tr>
+                    <tr><td>New Products (650 Target)</td><td class="text-right alert-red">9.54%</td></tr>
+                    <tr><td>Products Updated (450 Target)</td><td class="text-right success-green">52.67%</td></tr>
                     <tr><td>Promoted Items (180 Target)</td><td class="text-right alert-red">3.89%</td></tr>
                 </tbody>
             </table>
@@ -97,7 +96,7 @@
             <table>
                 <thead><tr><th>Web Stats</th><th class="text-right">% Achievement</th></tr></thead>
                 <tbody>
-                    <tr><td>Website Traffic (25k Target)</td><td class="text-right success-green">120.9%</td></tr>
+                    <tr><td>Website Traffic (25k Target)</td><td class="text-right alert-red">12.24%</td></tr>
                     <tr><td>Overall Traffic (125k Target)</td><td class="text-right alert-red">26.65%</td></tr>
                     <tr><td>Articles (300 Target)</td><td class="text-right alert-red">0.00%</td></tr>
                 </tbody>
@@ -106,14 +105,25 @@
     </div>
 
     <span class="h-red">03. Operations & Logistics</span>
-    <div class="glass-card overflow-x-auto p-0 mb-12">
+    <div class="glass-card overflow-x-auto p-0 mb-6">
         <table>
             <thead><tr><th>Operational Metric</th><th>Goal</th><th>Actual</th><th>Status</th></tr></thead>
             <tbody>
                 <tr><td>Procurement Processing (Lagos)</td><td>10 Mins</td><td>6 Mins</td><td class="success-green">60.0% Achievement</td></tr>
-                <tr><td>Order TAT (Lagos)</td><td>2 Hours</td><td>5 Hours</td><td class="alert-red">225% (Over Target)</td></tr>
+                <tr><td>Order TAT (Lagos)</td><td>2 Hours</td><td>5 Hours</td><td class="alert-red">225% (Delayed)</td></tr>
                 <tr><td>Order TAT (Outside Lagos)</td><td>24 Hours</td><td>15 Hours</td><td class="success-green">62.5% Achievement</td></tr>
-                <tr><td>Refund Rate Control</td><td>5% Limit</td><td><span class="blur-stat">₦320k</span></td><td class="success-green">4.50% Actual</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <span class="h-red">04. Finance & Risks</span>
+    <div class="glass-card overflow-x-auto p-0 mb-12">
+        <table>
+            <thead><tr><th>Financial Metric</th><th>Limit</th><th>Actual</th><th>Impact %</th></tr></thead>
+            <tbody>
+                <tr><td>Refund Volume</td><td>5% Max</td><td>₦320k</td><td class="success-green">1.62%</td></tr>
+                <tr><td>Shipping Charged</td><td>-</td><td>₦0</td><td class="alert-red">0.00%</td></tr>
+                <tr><td>Delivery Cost</td><td>-</td><td>₦0</td><td class="alert-red">0.00%</td></tr>
             </tbody>
         </table>
     </div>
