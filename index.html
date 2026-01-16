@@ -7,92 +7,107 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Outfit', sans-serif; background: #050505; color: #fff; padding: 1rem 2rem; line-height: 1.1; }
-        .glass-card { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.8rem; padding: 1.2rem; margin-bottom: 1rem; }
+        body { font-family: 'Outfit', sans-serif; background: #050505; color: #fff; line-height: 1; margin: 0; padding: 0; }
+        
+        /* FIXED TOP SECTION */
+        .fixed-header { 
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(10px);
+            padding: 1rem 2rem 0.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* SCROLLABLE CONTENT AREA */
+        .content-area { padding: 180px 2rem 2rem 2rem; } /* Offset for the fixed header */
+
+        .glass-card { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 0.6rem; padding: 0.8rem; }
         .brand-yellow { color: #FFD700; }
         .alert-red { color: #ff3333 !important; }
         .success-green { color: #00ff88 !important; }
-        .blur-stat { filter: blur(8px); opacity: 0.4; user-select: none; }
-        .section-header { margin-top: 1.5rem; margin-bottom: 1rem; border-left: 6px solid #FFD700; padding-left: 0.8rem; }
-        .section-header h2 { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; font-style: italic; }
-        .stat-huge { font-size: 3rem; font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
-        .stat-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #666; margin-bottom: 0.25rem; }
-        .data-table { width: 100%; border-collapse: separate; border-spacing: 0 0.25rem; }
-        .data-table td { padding: 0.6rem 1rem; background: #111; font-size: 1.1rem; font-weight: 700; border-bottom: 1px solid #1a1a1a; }
-        .data-table th { padding: 0.5rem 1rem; color: #444; text-align: left; text-transform: uppercase; font-size: 0.7rem; }
+        .blur-stat { filter: blur(6px); opacity: 0.4; }
+        .section-header { margin-top: 1.5rem; margin-bottom: 0.5rem; border-left: 4px solid #FFD700; padding-left: 0.6rem; }
+        .section-header h2 { font-size: 1.2rem; font-weight: 900; text-transform: uppercase; font-style: italic; }
+        .stat-huge { font-size: 2rem; font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
+        .stat-label { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; color: #555; margin-bottom: 0.1rem; }
+        .data-table { width: 100%; border-collapse: separate; border-spacing: 0 0.2rem; }
+        .data-table td { padding: 0.5rem 0.8rem; background: #0d0d0d; font-size: 1rem; font-weight: 700; border-bottom: 1px solid #1a1a1a; }
+        .data-table th { padding: 0.4rem 0.8rem; color: #444; text-align: left; text-transform: uppercase; font-size: 0.65rem; }
     </style>
 </head>
 <body>
 
-    <header class="mb-6 flex justify-between items-end border-b border-white/5 pb-4">
-        <div>
-            <h1 class="text-4xl font-black italic uppercase tracking-tighter leading-none">ENERGY<span class="brand-yellow">MALL</span></h1>
-            <p class="text-sm font-bold tracking-widest opacity-40 uppercase">Jan 2026 Executive Audit</p>
-        </div>
-        <div class="text-right">
-            <span class="bg-white text-black px-2 py-0.5 font-black text-[10px] rounded uppercase">Confidential</span>
-            <p class="text-[10px] font-black opacity-30 mt-1">VERIFIED: 16 JAN 26</p>
-        </div>
-    </header>
+    <div class="fixed-header">
+        <header class="flex justify-between items-center mb-3">
+            <div>
+                <h1 class="text-3xl font-black italic uppercase tracking-tighter leading-none">ENERGY<span class="brand-yellow">MALL</span></h1>
+                <p class="text-[9px] font-bold tracking-[0.2em] opacity-40 uppercase">Executive Performance Audit • 2026</p>
+            </div>
+            <div class="text-right">
+                <span class="bg-white text-black px-2 py-0.5 font-black text-[9px] rounded uppercase">Confidential</span>
+                <p class="text-[9px] font-black opacity-30 mt-1 uppercase">Updated: 16 Jan 26</p>
+            </div>
+        </header>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-        <div class="glass-card border-red-500/20">
-            <p class="stat-label">Revenue Achievement</p>
-            <p class="stat-huge alert-red">7.61%</p>
-            <p class="text-sm font-bold opacity-30 mt-1 italic">Goal: 300m | Actual: <span class="blur-stat">₦22.8m</span></p>
-        </div>
-        <div class="glass-card border-red-500/20">
-            <p class="stat-label">Acquisition</p>
-            <p class="stat-huge alert-red">3.20%</p>
-            <p class="text-sm font-bold opacity-30 mt-1">Goal: 250 | Actual: 8</p>
-        </div>
-        <div class="glass-card border-red-500/20">
-            <p class="stat-label">Conversion Achievement</p>
-            <p class="stat-huge alert-red">31.25%</p>
-            <p class="text-sm font-bold opacity-30 mt-1">Goal: 20% | Actual: 6.25%</p>
+        <div class="grid grid-cols-3 gap-3">
+            <div class="glass-card border-red-500/20 py-2">
+                <p class="stat-label">Revenue Achievement</p>
+                <p class="stat-huge alert-red">7.61%</p>
+                <p class="text-[9px] font-bold opacity-30 italic">Goal: 300m | Actual: <span class="blur-stat">₦22.8m</span></p>
+            </div>
+            <div class="glass-card border-red-500/20 py-2">
+                <p class="stat-label">Acquisition</p>
+                <p class="stat-huge alert-red">3.20%</p>
+                <p class="text-[9px] font-bold opacity-30">Goal: 250 | Actual: 8</p>
+            </div>
+            <div class="glass-card border-red-500/20 py-2">
+                <p class="stat-label">Conversion</p>
+                <p class="stat-huge alert-red">31.25%</p>
+                <p class="text-[9px] font-bold opacity-30">Goal: 20% | Actual: 6.25%</p>
+            </div>
         </div>
     </div>
 
-    <div class="section-header"><h2>01. Marketing & Web</h2></div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="content-area">
+        <div class="section-header"><h2>01. Marketing & Web Performance</h2></div>
+        <div class="grid grid-cols-2 gap-3 mb-2">
+            <div class="glass-card p-0 overflow-hidden">
+                <table class="data-table">
+                    <thead><tr><th>Lead Metric</th><th>Target</th><th>Actual</th><th>%</th></tr></thead>
+                    <tbody>
+                        <tr><td>Leads</td><td>1,500</td><td>128</td><td class="alert-red">8.5%</td></tr>
+                        <tr><td>Reach</td><td>5m</td><td>2,028</td><td class="alert-red">0.04%</td></tr>
+                        <tr><td>Traffic</td><td>125k</td><td>74.8k</td><td class="success-green">59.9%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="glass-card p-0 overflow-hidden">
+                <table class="data-table">
+                    <thead><tr><th>Products</th><th>Goal</th><th>Actual</th><th>%</th></tr></thead>
+                    <tbody>
+                        <tr><td>New</td><td>650</td><td>62</td><td class="alert-red">9.5%</td></tr>
+                        <tr><td>Updated</td><td>450</td><td>237</td><td class="success-green">52.6%</td></tr>
+                        <tr><td>Articles</td><td>50</td><td>10</td><td class="alert-red">20%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-header"><h2>02. Operations & Logistics</h2></div>
         <div class="glass-card p-0 overflow-hidden">
             <table class="data-table">
-                <thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th>%</th></tr></thead>
+                <thead><tr><th>Operational Metric</th><th>Goal</th><th>Actual</th><th>Status</th></tr></thead>
                 <tbody>
-                    <tr><td>Leads</td><td>1,500</td><td>128</td><td class="alert-red">8.53%</td></tr>
-                    <tr><td>Total Reach</td><td>5m</td><td>2,028</td><td class="alert-red">0.04%</td></tr>
-                    <tr><td>Traffic</td><td>125k</td><td>74.8k</td><td class="success-green">59.9%</td></tr>
+                    <tr><td>Procurement (Lagos)</td><td>10m</td><td>6m</td><td class="success-green">60% Efficiency</td></tr>
+                    <tr><td>Order TAT (Lagos)</td><td>2h</td><td>4h</td><td class="alert-red">190% (Delayed)</td></tr>
+                    <tr><td>Order TAT (Regional)</td><td>24h</td><td>16h</td><td class="success-green">64.5% Achievement</td></tr>
+                    <tr><td>Refund Rate Control</td><td>5%</td><td><span class="blur-stat">₦1.4m</span></td><td class="alert-red">6.31% Actual</td></tr>
                 </tbody>
             </table>
         </div>
-        <div class="glass-card p-0 overflow-hidden">
-            <table class="data-table">
-                <thead><tr><th>Product Inventory</th><th>Target</th><th>Actual</th><th>%</th></tr></thead>
-                <tbody>
-                    <tr><td>New Added</td><td>650</td><td>62</td><td class="alert-red">9.54%</td></tr>
-                    <tr><td>Updated</td><td>450</td><td>237</td><td class="success-green">52.6%</td></tr>
-                    <tr><td>Promoted</td><td>180</td><td>7</td><td class="alert-red">3.89%</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
 
-    <div class="section-header"><h2>02. Operations & Logistics</h2></div>
-    <div class="glass-card p-0 overflow-hidden">
-        <table class="data-table">
-            <thead><tr><th>Operational Metric</th><th>Goal</th><th>Actual</th><th>Status</th></tr></thead>
-            <tbody>
-                <tr><td>Procurement (Lagos)</td><td>10m</td><td>6m</td><td class="success-green">60% Achievement</td></tr>
-                <tr><td>Order TAT (Lagos)</td><td>2h</td><td>4h</td><td class="alert-red">190% (Delayed)</td></tr>
-                <tr><td>Order TAT (Regional)</td><td>24h</td><td>16h</td><td class="success-green">64.5% Achievement</td></tr>
-                <tr><td>Refund Rate</td><td>5%</td><td><span class="blur-stat">₦1.4m</span></td><td class="alert-red">6.31% Actual</td></tr>
-            </tbody>
-        </table>
+        <footer class="mt-6 py-4 border-t border-white/5 text-center opacity-20">
+            <p class="text-[9px] font-black uppercase tracking-widest italic">EnergyMall Strategy Division • Daily Audit Report</p>
+        </footer>
     </div>
-
-    <footer class="mt-6 py-4 border-t border-white/5 text-center opacity-20">
-        <p class="text-xs font-black uppercase tracking-widest italic">EnergyMall Strategy Division • 2026</p>
-    </footer>
 
 </body>
 </html>
