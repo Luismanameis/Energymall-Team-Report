@@ -8,144 +8,167 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; margin: 0; }
-        .fixed-header { 
+        
+        /* FIXED TOP SECTION */
+        .fixed-header-container { 
             position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-            background-color: rgba(5, 5, 5, 0.98); backdrop-filter: blur(12px);
-            border-bottom: 2px solid #1a1a1a; padding: 15px 25px;
+            background-color: rgba(5, 5, 5, 0.95); backdrop-filter: blur(15px);
+            border-bottom: 2px solid #1a1a1a;
         }
-        .scroll-container { margin-top: 180px; padding: 0 25px; }
+        .main-logo-bar { padding: 15px 25px; border-bottom: 1px solid #222; }
+        .kpi-fixed-bar { padding: 12px 25px; background: #0a0a0a; display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+
+        .scroll-container { margin-top: 210px; padding: 0 25px; }
         
-        /* Heading Styles */
-        .h-red { color: #FF0000 !important; font-weight: 950; text-transform: uppercase; border-left: 8px solid #FF0000; padding-left: 15px; margin: 60px 0 20px 0; display: block; font-size: 1.6rem; letter-spacing: 1px; }
-        
-        /* Segment Containers */
+        /* DEPARTMENT STYLING */
         .segment-box { border: 1px solid #1a1a1a; background: #080808; padding: 25px; border-radius: 16px; margin-bottom: 40px; }
-        .card { background: #111111; border: 1px solid #222; border-radius: 12px; padding: 15px; }
+        .h-red { color: #FF0000 !important; font-weight: 950; text-transform: uppercase; border-left: 8px solid #FF0000; padding-left: 15px; margin: 40px 0 20px 0; display: block; font-size: 1.4rem; letter-spacing: 1px; }
+        .card { background: #111111; border: 1px solid #222; border-radius: 12px; padding: 12px; }
         
-        /* Personalization Styles */
-        .rev-green { color: #00FF41 !important; filter: blur(4px); transition: filter 0.3s; } 
-        .rev-green:hover { filter: blur(0px); } /* Hover to reveal for admin */
+        /* PERSONALIZATION RULES */
+        .rev-green { color: #00FF41 !important; filter: blur(5px); cursor: pointer; } 
+        .rev-green:hover { filter: blur(0px); }
         .pct-green { color: #00FF41 !important; } 
         .pct-red { color: #FF0000 !important; }  
         .metric-white { color: #ffffff !important; }
 
-        .stack-lg { font-size: 2.2rem; font-weight: 900; line-height: 1; }
-        .stack-sm { font-size: 0.75rem; font-weight: 700; color: #555; display: block; margin-top: 4px; }
+        .stack-lg { font-size: 1.8rem; font-weight: 900; line-height: 1; }
+        .stack-sm { font-size: 0.7rem; font-weight: 700; color: #555; display: block; margin-top: 4px; }
         
         table { width: 100%; border-collapse: collapse; }
-        th { color:#555; font-size:10px; text-transform:uppercase; font-weight: 900; padding:12px; border-bottom:2px solid #222; text-align: left; }
-        td { padding:12px; border-bottom: 1px solid #1a1a1a; font-size:0.9rem; font-weight: 700; }
+        th { color:#555; font-size:10px; text-transform:uppercase; font-weight: 900; padding:10px; border-bottom:2px solid #222; text-align: left; }
+        td { padding:10px; border-bottom: 1px solid #1a1a1a; font-size:0.85rem; font-weight: 700; }
         
-        .stat-label { color: #888; font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+        .stat-label { color: #666; font-size: 0.6rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+
+        @media (max-width: 768px) {
+            .kpi-fixed-bar { grid-template-columns: repeat(2, 1fr); }
+            .scroll-container { margin-top: 280px; }
+        }
     </style>
 </head>
 <body>
-<div class="max-w-7xl mx-auto">
-    <div class="fixed-header">
-        <header class="flex justify-between items-center">
-            <div>
-                <h1 class="text-3xl font-black tracking-tighter uppercase">ENERGY<span class="text-red-600">MALL</span></h1>
-                <p class="text-zinc-500 font-bold uppercase text-[9px] tracking-[4px] mt-1">Global Segmented Report | Jan 2026</p>
-            </div>
-            <div class="text-right border-l-2 border-red-600 pl-4">
-                <p class="stat-label">Group Revenue</p>
-                <p class="text-3xl font-black rev-green italic">₦118m</p>
-            </div>
-        </header>
+
+<div class="fixed-header-container">
+    <div class="main-logo-bar flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-black tracking-tighter uppercase">ENERGY<span class="text-red-600">MALL</span></h1>
+            <p class="text-zinc-500 font-bold uppercase text-[8px] tracking-[3px]">Consolidated Team Audit | 2026</p>
+        </div>
+        <div class="text-right">
+            <span class="text-[10px] font-black text-zinc-600 uppercase">System Status: Active</span>
+        </div>
     </div>
-
-    <div class="scroll-container">
-        
-        <span class="h-red">01. Sales & Marketing</span>
-        <div class="segment-box">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="card"><p class="stat-label">Total Reach</p><p class="stack-lg metric-white">9k</p><span class="stack-sm pct-red">0.18% (Target 5m)</span></div>
-                <div class="card"><p class="stat-label">Leads Gained</p><p class="stack-lg metric-white">252</p><span class="stack-sm pct-red">16.8% (Target 1.5k)</span></div>
-                <div class="card"><p class="stat-label">New Customers</p><p class="stack-lg metric-white">44</p><span class="stack-sm pct-red">17.6% (Target 250)</span></div>
-            </div>
-            <div class="mt-6 card flex justify-between items-center">
-                <div><p class="stat-label">Conversion Rate</p><p class="text-2xl font-black metric-white">17.46%</p></div>
-                <div class="text-right"><span class="pct-green text-3xl font-black">87.3%</span><span class="block text-[10px] text-zinc-500 uppercase font-bold">Efficiency</span></div>
-            </div>
+    
+    <div class="kpi-fixed-bar">
+        <div class="border-r border-zinc-800">
+            <p class="stat-label">Revenue Achieved</p>
+            <p class="text-xl font-black rev-green italic">₦118m</p>
+            <span class="text-[10px] font-bold pct-red">39.34% of Target</span>
         </div>
-
-        <span class="h-red">02. Web & SEO</span>
-        <div class="segment-box">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="card p-0 overflow-hidden">
-                    <table>
-                        <thead><tr><th>Traffic Type</th><th>Target</th><th>Actual</th><th class="text-right">Perf</th></tr></thead>
-                        <tbody>
-                            <tr><td>Overall Traffic</td><td>125k</td><td class="metric-white">140k</td><td class="text-right pct-green">112.1%</td></tr>
-                            <tr><td>Internal Traffic</td><td>25k</td><td class="metric-white">11.7k</td><td class="text-right pct-red">46.9%</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="card p-0 overflow-hidden">
-                    <table>
-                        <thead><tr><th>SEO Health</th><th>Target</th><th>Actual</th><th class="text-right">Perf</th></tr></thead>
-                        <tbody>
-                            <tr><td>Articles Published</td><td>50</td><td class="metric-white">21</td><td class="text-right pct-red">42.0%</td></tr>
-                            <tr><td>SEO Audit Score</td><td>100%</td><td class="metric-white">78%</td><td class="text-right pct-green">78%</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <div class="border-r border-zinc-800">
+            <p class="stat-label">Total Customers</p>
+            <p class="text-xl font-black metric-white">44</p>
+            <span class="text-[10px] font-bold pct-red">17.60% achieved</span>
         </div>
-
-        <span class="h-red">03. Product Leadership</span>
-        <div class="segment-box">
-            <div class="card mb-6 flex justify-between items-center">
-                <div><p class="stat-label">Total Website Catalog</p><p class="text-3xl font-black metric-white">13.1k</p></div>
-                <div class="text-right"><span class="pct-green text-3xl font-black">131.3%</span><span class="block text-[10px] text-zinc-500 uppercase font-bold">Volume Target</span></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="card"><p class="stat-label">Updates</p><p class="stack-lg metric-white">621</p><span class="stack-sm pct-green">138%</span></div>
-                <div class="card"><p class="stat-label">New Onboard</p><p class="stack-lg metric-white">190</p><span class="stack-sm pct-red">29.2%</span></div>
-                <div class="card"><p class="stat-label">Promoted</p><p class="stack-lg metric-white">101</p><span class="stack-sm pct-green">56.1%</span></div>
-            </div>
+        <div class="border-r border-zinc-800">
+            <p class="stat-label">Total Leads</p>
+            <p class="text-xl font-black metric-white">252</p>
+            <span class="text-[10px] font-bold pct-red">16.80% of 1.5k</span>
         </div>
-
-        <span class="h-red">04. Operations & Logistics</span>
-        <div class="segment-box">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="card">
-                    <p class="stat-label">Procurement Speed</p>
-                    <div class="flex justify-between py-2 border-b border-white/5"><span>Lagos</span><span class="metric-white">08m 25s</span><span class="pct-green">84.0%</span></div>
-                    <div class="flex justify-between py-2"><span>Outside Lagos</span><span class="metric-white">20m 07s</span><span class="pct-red">154.7%</span></div>
-                </div>
-                <div class="card">
-                    <p class="stat-label">Order TAT (Hours)</p>
-                    <div class="flex justify-between py-2 border-b border-white/5"><span>Lagos</span><span class="metric-white">4 hrs</span><span class="pct-red">200.0%</span></div>
-                    <div class="flex justify-between py-2"><span>Outside Lagos</span><span class="metric-white">24 hrs</span><span class="pct-green">100.0%</span></div>
-                </div>
-            </div>
+        <div>
+            <p class="stat-label">Conversion</p>
+            <p class="text-xl font-black metric-white">17.46%</p>
+            <span class="text-[10px] font-bold pct-green">87.30% Efficiency</span>
         </div>
-
-        <span class="h-red">05. Finance & Integrity</span>
-        <div class="segment-box">
-            <div class="card p-0 overflow-hidden">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Refund Liability</td>
-                            <td class="text-xl rev-green italic">₦7.6m</td>
-                            <td class="text-right"><span class="stat-label block">Target 5%</span><span class="pct-red">6.50%</span></td>
-                        </tr>
-                        <tr>
-                            <td>Net Logistics Gap</td>
-                            <td class="text-sm metric-white">Cost: ₦649k | Ship: ₦570k</td>
-                            <td class="text-right"><span class="stat-label block">Margin</span><span class="pct-red">-12.3%</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <footer class="text-center py-20 opacity-20 text-[10px] uppercase tracking-[10px]">
-            Energymall Intelligent Reporting © 2026
-        </footer>
     </div>
 </div>
+
+<div class="max-w-7xl mx-auto scroll-container">
+    
+    <span class="h-red">01. Sales & Marketing</span>
+    <div class="segment-box">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="card"><p class="stat-label">Total Reach</p><p class="stack-lg metric-white">9k</p><span class="stack-sm pct-red">0.18% (Target 5m)</span></div>
+            <div class="card"><p class="stat-label">Total Engagement</p><p class="stack-lg metric-white">815</p><span class="stack-sm pct-red">0.48% (Target 170k)</span></div>
+        </div>
+    </div>
+
+    <span class="h-red">02. Web Intelligence</span>
+    <div class="segment-box">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div class="card"><p class="stat-label">Overall Traffic</p><p class="stack-lg metric-white">140k</p><span class="stack-sm pct-green">112.12%</span></div>
+            <div class="card"><p class="stat-label">Web Traffic</p><p class="stack-lg metric-white">11.7k</p><span class="stack-sm pct-red">46.92%</span></div>
+            <div class="card"><p class="stat-label">SEO Score</p><p class="stack-lg metric-white">78%</p><span class="stack-sm pct-green">78.00%</span></div>
+        </div>
+        <div class="card p-0 overflow-hidden">
+            <table>
+                <thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th class="text-right">Perf %</th></tr></thead>
+                <tbody>
+                    <tr><td>Total Website Products</td><td>10k</td><td class="metric-white">13.1k</td><td class="text-right pct-green">131.33%</td></tr>
+                    <tr><td>Articles Published</td><td>50</td><td class="metric-white">21</td><td class="text-right pct-red">42.00%</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <span class="h-red">03. Product Lead</span>
+    <div class="segment-box">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div class="card"><p class="stat-label">Products Updated</p><p class="stack-lg metric-white">621</p><span class="stack-sm pct-green">138.00%</span></div>
+            <div class="card"><p class="stat-label">Products Promoted</p><p class="stack-lg metric-white">101</p><span class="stack-sm pct-green">56.11%</span></div>
+        </div>
+        <div class="card p-0 overflow-hidden">
+            <table>
+                <thead><tr><th>Task</th><th>Target</th><th>Actual</th><th class="text-right">Perf %</th></tr></thead>
+                <tbody>
+                    <tr><td>New Products Added</td><td>650</td><td class="metric-white">190</td><td class="text-right pct-red">29.23%</td></tr>
+                    <tr><td>Content Articles</td><td>30</td><td class="metric-white">67</td><td class="text-right pct-green">223.33%</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <span class="h-red">04. Logistics & Procurement</span>
+    <div class="segment-box">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card">
+                <p class="stat-label">Procurement Time (Min)</p>
+                <div class="flex justify-between py-2 border-b border-white/5"><span>Lagos</span><span class="metric-white">08:25</span><span class="pct-green">84.09%</span></div>
+                <div class="flex justify-between py-2"><span>Outside</span><span class="metric-white">20:07</span><span class="pct-red">154.70%</span></div>
+            </div>
+            <div class="card">
+                <p class="stat-label">Order TAT (Hours)</p>
+                <div class="flex justify-between py-2 border-b border-white/5"><span>Lagos</span><span class="metric-white">4 hrs</span><span class="pct-red">200.0%</span></div>
+                <div class="flex justify-between py-2"><span>Outside</span><span class="metric-white">24 hrs</span><span class="pct-green">100.0%</span></div>
+            </div>
+        </div>
+    </div>
+
+    <span class="h-red">05. Finance</span>
+    <div class="segment-box">
+        <div class="card p-0 overflow-hidden mb-10">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Refund Liability</td>
+                        <td class="text-lg rev-green italic">₦7.6m</td>
+                        <td class="text-right"><span class="stat-label block">Target 5%</span><span class="pct-red">6.50%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Logistics (Cost vs Charge)</td>
+                        <td class="text-xs metric-white italic">₦649k / ₦570k</td>
+                        <td class="text-right"><span class="stat-label block">Shipping</span><span class="metric-white">₦570k</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="text-center py-20 opacity-10 text-[10px] uppercase tracking-[15px]">
+        Energymall Group Data 2026
+    </footer>
+</div>
+
 </body>
 </html>
